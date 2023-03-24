@@ -2,18 +2,19 @@ import { useRef } from 'react'
 import { ethers } from "ethers"
 
 import { Price, Target } from '@rarimo/nft-checkout'
+// @ts-ignore
 import { RarimoPayButton, DappContextProvider } from '@rarimo/react-nft-checkout'
 import { useProvider } from '@rarimo/react-provider'
 import { MetamaskProvider } from '@rarimo/provider'
 
 const NFT_CONTRACT_ADDRESS = "0x77fedfb705c8bac2e03aad2ad8a8fe83e3e20fa1"
 
-export const App = () => {
+const App = () => {
 
   // Connect to the user's wallet
-  const { provider, ...rest } = useProvider(MetamaskProvider)
+  const { provider, address } = useProvider(MetamaskProvider)
+
   provider?.connect()
-  const userWalletAddress = provider?.address
 
   // Set the price as 0.1 ETH and convert to gwei
   const priceOfNft = Price.fromRaw('0.01', 18, 'ETH')
@@ -24,7 +25,7 @@ export const App = () => {
     // NFT contract address
     address: NFT_CONTRACT_ADDRESS,
     // Recipient wallet address
-    recipient: userWalletAddress!,
+    recipient: address!,
     price: priceOfNft,
     // The token to swap the payment token to
     swapTargetTokenSymbol: 'WETH',
@@ -34,7 +35,7 @@ export const App = () => {
   const encodedFunctionData = new ethers.utils
     .Interface(["function buy(address receiver_) payable"])
     .encodeFunctionData("buy", [
-      userWalletAddress!,
+        address!,
     ])
 
   // Create the transaction bundle
@@ -59,3 +60,5 @@ export const App = () => {
     </div>
   )
 }
+
+export default App
