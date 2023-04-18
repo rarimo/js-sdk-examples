@@ -23,7 +23,7 @@ const getMetamaskWalletInfo = async () => {
   console.log('providerType:', provider.providerType)
 
   const providerEvent = provider[event] as (
-    cb: (payload: ProviderEventPayload) => void,
+    cb: (payload) => void,
   ) => void
 
   providerEvent?.call(provider, payload => {
