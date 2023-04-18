@@ -22,6 +22,8 @@ const getMetamaskWalletInfo = async () => {
   console.log('chainType:', ChainTypes[provider.chainType!])
   console.log('providerType:', provider.providerType)
 
+  address.value = provider?.address ?? ''
+
   const providerEvent = provider[event] as (
     cb: (payload) => void,
   ) => void
