@@ -6,6 +6,7 @@ import {useProvider} from '@rarimo/react-provider'
 import {MetamaskProvider} from '@rarimo/provider'
 import {useEffect, useMemo} from "react";
 
+// Address of the NFT sale contract
 const NFT_CONTRACT_ADDRESS = "0x77fedfb705c8bac2e03aad2ad8a8fe83e3e20fa1"
 
 const App = () => {
@@ -28,8 +29,6 @@ const App = () => {
    return {
      // Source chain id (Sepolia in this case)
      chainId: 11155111,
-     // NFT contract address
-     address: NFT_CONTRACT_ADDRESS,
      // Recipient wallet address
      recipient: provider?.address ?? '',
      price: priceOfNft,
