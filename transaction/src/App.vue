@@ -4,6 +4,7 @@ import { MetamaskProvider, createProvider } from '@rarimo/provider'
 import { ethers } from "ethers"
 import { ref } from 'vue'
 
+// Address of the NFT sale contract
 const NFT_CONTRACT_ADDRESS = '0x77fedfb705c8bac2e03aad2ad8a8fe83e3e20fa1'
 
 const txUrl = ref('')
@@ -29,8 +30,6 @@ const sendTransaction = async () => {
   const target = {
     // Destination chain id (Sepolia in this case)
     chainId: 11155111,
-    // Address of the NFT sale contract
-    address: NFT_CONTRACT_ADDRESS,
     // Recipient's wallet address
     recipient: provider?.address ?? '',
     price: priceOfNft,
@@ -79,7 +78,7 @@ const sendTransaction = async () => {
   const bundle = ethers.utils.defaultAbiCoder.encode(
       ["address[]", "uint256[]", "bytes[]"],
       [
-        [target.address],
+        [NFT_CONTRACT_ADDRESS],
         [target.price.value],
         [encodedFunctionData],
       ]
