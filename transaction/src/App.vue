@@ -7,7 +7,8 @@ import { ref } from 'vue'
 // Address of the NFT sale contract
 const NFT_CONTRACT_ADDRESS = '0x77fedfb705c8bac2e03aad2ad8a8fe83e3e20fa1'
 
-const txUrl = ref('')
+const sourceTxUrl = ref('')
+const destinationTxUrl = ref('')
 
 const sendTransaction = async () => {
   // Connect to the Metamask wallet in the browser using Web3.js, using the MetamaskProvider interface to limit bundle size.
@@ -23,13 +24,17 @@ const sendTransaction = async () => {
   // This example uses the Goerli chain, but your application can ask the user which chain to use.
   const selectedChain = chains.find(i => i.name === ChainNames.Goerli)
 
+  // Select the chain to pay on.
+  // In this case, the NFT contract is on the Sepolia chain.
+  const destinationChain = chains.find(i => i.name === ChainNames.Sepolia)
+
   // Set the price as 0.1 ETH and convert to wei
   const priceOfNft = Price.fromRaw('0.01', 18, 'ETH')
 
   // Set the parameters for the transaction, including the price and the tokens to accept payment in.
   const target = {
-    // Destination chain id (Sepolia in this case)
-    chainId: 11155111,
+    // Destination chain id
+    chainId: destinationChain!.id,
     // Recipient's wallet address
     recipient: provider?.address ?? '',
     price: priceOfNft,
@@ -88,8 +93,12 @@ const sendTransaction = async () => {
   // The `checkout()` method takes the parameters from the operation instance, gets approval from the user's wallet, and calls the Rarimo contract to handle the transaction.
   const txHash = await op.checkout(estimatedPrice, { bundle })
 
-  // Get a link to the transaction.
-  txUrl.value = provider.getTxUrl(selectedChain!, String(txHash)) ?? ''
+  // Get the transaction on the source chain
+  sourceTxUrl.value = provider.getTxUrl(selectedChain!, String(txHash)) ?? ''
+
+  // Get the transaction that unlocks tokens on the destination chain
+  const destinationTx = await op.getDestinationTx(selectedChain!, String(txHash))
+  destinationTxUrl.value = provider.getTxUrl(targetChain, destinationTx.hash)  ?? ''
 }
 
 sendTransaction()
@@ -97,6 +106,9 @@ sendTransaction()
 
 <template>
   <div>
-    Transaction URL: {{ txUrl }}
+    <ul>
+      <li>Source chain transaction URL: {{ sourceTxUrl }}</li>
+      <li>Destination chain transaction URL: {{ destinationTxUrl }}</li>
+    </ul>
   </div>
 </template>
