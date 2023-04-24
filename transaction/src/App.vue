@@ -98,7 +98,7 @@ const sendTransaction = async () => {
 
   // Get the transaction that unlocks tokens on the destination chain
   const destinationTx = await op.getDestinationTx(selectedChain!, String(txHash))
-  destinationTxUrl.value = provider.getTxUrl(targetChain, destinationTx.hash)  ?? ''
+  destinationTxUrl.value = provider.getTxUrl(selectedChain!, destinationTx.hash)  ?? ''
 }
 
 sendTransaction()
