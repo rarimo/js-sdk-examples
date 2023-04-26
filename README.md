@@ -4,4 +4,4 @@ These examples show how to use the Rarimo JavaScript/TypeScript SDK for tasks li
 
 To try the examples, clone this repository and follow the instructions in the README.md files in each sub-folder.
 
-For more information about Rarimo, the SDK, and these use cases, see the [Rarimo documentation](https://rarimo.gitlab.io/docs/).
+For more information about Rarimo, the SDK, and these use cases, see the [Rarimo documentation](https://docs.rarimo.com/).
