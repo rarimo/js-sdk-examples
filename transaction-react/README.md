@@ -16,7 +16,7 @@ To set up this application locally, follow these steps:
    - Phantom
    - Solflare
 
-1. Obtain some UNI tokens as described in the [Instructions for the Rarimo demo application instructions](https://rarimo.gitlab.io/demo-settlement/?path=/story/demo-purchasewithanytoken--demo-instructions&full=true).
+1. Obtain some UNI or USDC tokens as described in the [Instructions for the Rarimo demo application instructions](https://rarimo.gitlab.io/demo-settlement/?path=/story/demo-purchasewithanytoken--demo-instructions&full=true).
 
 1. Clone this folder.
 
