@@ -1,11 +1,11 @@
-import { MetamaskProvider } from '@rarimo/provider'
+import { MetamaskProvider } from '@rarimo/providers-evm'
 import { useProvider } from '@rarimo/react-provider'
 
 function App() {
-  const { provider } = useProvider(MetamaskProvider)
-
-  provider?.connect()
-  console.log(provider?.address)
+  const { provider, ...rest } = useProvider(MetamaskProvider)
+  console.log(provider)
+  // provider?.connect()
+  // console.log(provider?.address)
 
   return <div className="App">Wallet address: {provider?.address}</div>
 }

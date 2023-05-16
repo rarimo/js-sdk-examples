@@ -3,7 +3,7 @@ import {ethers} from "ethers"
 import {Price} from '@rarimo/nft-checkout'
 import {RarimoPayButton, DappContextProvider} from '@rarimo/react-nft-checkout'
 import {useProvider} from '@rarimo/react-provider'
-import {MetamaskProvider} from '@rarimo/provider'
+import {MetamaskProvider} from '@rarimo/providers-evm'
 import {useEffect, useMemo} from "react";
 
 // Address of the NFT sale contract

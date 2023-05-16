@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { MetamaskProvider, createProvider, ChainTypes } from '@rarimo/provider'
+import { createProvider, ChainTypes } from '@rarimo/provider'
+import { MetamaskProvider } from '@rarimo/providers-evm'
 
 const getMetamaskWalletInfo = async () => {
   // Connect to the Metamask wallet in the browser using Web3.js, using the MetamaskProvider interface to limit bundle size.
