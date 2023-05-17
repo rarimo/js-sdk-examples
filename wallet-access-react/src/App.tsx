@@ -3,9 +3,8 @@ import { useProvider } from '@rarimo/react-provider'
 
 function App() {
   const { provider, ...rest } = useProvider(MetamaskProvider)
-  console.log(provider)
-  // provider?.connect()
-  // console.log(provider?.address)
+  provider?.connect()
+  console.log(provider?.address)
 
   return <div className="App">Wallet address: {provider?.address}</div>
 }
