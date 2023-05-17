@@ -1971,30 +1971,30 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@rarimo/provider@^1.5.0-rc.11":
-  version "1.5.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@rarimo/provider/-/provider-1.5.0-rc.11.tgz#f012c55a2a9601e760c2889d4b33a4e4c0ee1c06"
-  integrity sha512-4KCRJBQjsgqy2tew4V1WN5DHdvIV7GAgXmaSEdC+oLG3Ow+5qSDHzLOa0HFj++T31NLYSTvfIlPsvw8gm8wZVQ==
+"@rarimo/provider@^1.5.0-rc.12":
+  version "1.5.0-rc.12"
+  resolved "https://registry.yarnpkg.com/@rarimo/provider/-/provider-1.5.0-rc.12.tgz#51f092d6fd806b5dadf4cfce06083b2d341abbdd"
+  integrity sha512-8fF7+uOuablFleKKiJoUq7VWTnjzVZG/ToxFOAEdzaBz1S3+CKBSHuVV1pQBqJ452MNpE37ePB+yD2YvEm0w/Q==
   dependencies:
     "@distributedlab/tools" "^0.2.0-rc.9"
 
-"@rarimo/providers-evm@^1.5.0-rc.11":
-  version "1.5.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@rarimo/providers-evm/-/providers-evm-1.5.0-rc.11.tgz#ace4101bc6eeda198e96d8ea6e5558284faffd5d"
-  integrity sha512-O1L8r0bdW4OiEFAzJeBkrsMN152GSk4dazd6xJuh8RkuUAWNrPY1kqvfeHCOr6ap08z8jq/1ThZxp6SkZx1xxA==
+"@rarimo/providers-evm@^1.5.0-rc.12":
+  version "1.5.0-rc.12"
+  resolved "https://registry.yarnpkg.com/@rarimo/providers-evm/-/providers-evm-1.5.0-rc.12.tgz#f688c8241da9b8382470ce430757752bc99a57dc"
+  integrity sha512-r2BuGcRgNAe/r+h2K4ks1wkRNuE4+R8JINGfknjTLrbSata+/HoX/sqwU5Rocde0OXiNVLHbWxDJQl8Nq4MMfg==
   dependencies:
     "@ethersproject/abstract-provider" "^5.7.0"
     "@ethersproject/properties" "^5.7.0"
-    "@rarimo/provider" "^1.5.0-rc.11"
+    "@rarimo/provider" "^1.5.0-rc.12"
     ethers "^5.7.2"
     web3-core "^1.8.2"
 
-"@rarimo/react-provider@^1.5.0-rc.11":
-  version "1.5.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@rarimo/react-provider/-/react-provider-1.5.0-rc.11.tgz#a83a247616e1055045a4affeffc49447702548c0"
-  integrity sha512-6NtrVzA+UfiCQWz7TOepuU1KI/buwhQ9TZ0BHDP8wlW8E67dwMGlZD6R/jvedwA95tvUnfAfSxY8h/9B/n2V5A==
+"@rarimo/react-provider@^1.5.0-rc.12":
+  version "1.5.0-rc.12"
+  resolved "https://registry.yarnpkg.com/@rarimo/react-provider/-/react-provider-1.5.0-rc.12.tgz#d864378933a94855962f667fbadd2d45d6b2f412"
+  integrity sha512-x7nnPwZy8/+YpQLu+MOFYpG82gqEry+CsvMjaKWIeq2XFL1wDlsPq6ULWfzraDacIMGl6rZt4WwzGSAJ+YSrhw==
   dependencies:
-    "@rarimo/provider" "^1.5.0-rc.11"
+    "@rarimo/provider" "^1.5.0-rc.12"
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
