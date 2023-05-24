@@ -24,12 +24,14 @@ const getMetamaskWalletInfo = async () => {
 
   address.value = provider?.address ?? ''
 
-  const providerEvent = provider[event] as (
-    cb: (payload) => void,
-  ) => void
+  PROVIDER_EVENTS.forEach(event => {
+    const providerEvent = provider[event] as (
+      cb: (payload: ProviderEventPayload) => void,
+    ) => void
 
-  providerEvent?.call(provider, payload => {
-    address.value ||= payload?.address ?? ''
+    providerEvent?.call(provider, payload => {
+      address.value ||= payload?.address ?? ''
+    })
   })
 }
 
