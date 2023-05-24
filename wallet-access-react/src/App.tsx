@@ -1,9 +1,8 @@
-import { MetamaskProvider } from '@rarimo/provider'
+import { MetamaskProvider } from '@rarimo/providers-evm'
 import { useProvider } from '@rarimo/react-provider'
 
 function App() {
-  const { provider } = useProvider(MetamaskProvider)
-
+  const { provider, ...rest } = useProvider(MetamaskProvider)
   provider?.connect()
   console.log(provider?.address)
 
