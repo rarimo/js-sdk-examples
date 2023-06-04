@@ -1,74 +1,47 @@
-import {ethers} from "ethers"
+import { ethers} from "ethers"
+import { useRef } from 'react'
 
-import {Price} from '@rarimo/nft-checkout'
-import {RarimoPayButton, DappContextProvider} from '@rarimo/react-nft-checkout'
-import {useProvider} from '@rarimo/react-provider'
-import {MetamaskProvider} from '@rarimo/providers-evm'
-import {useEffect, useMemo} from "react";
+import { CheckoutOperationParams, Price } from '@rarimo/nft-checkout'
+import { RarimoPayButton, DappContextProvider } from '@rarimo/react-nft-checkout'
 
 // Address of the NFT sale contract
 const NFT_CONTRACT_ADDRESS = "0x77fedfb705c8bac2e03aad2ad8a8fe83e3e20fa1"
+// Buyer's address to send the bought NFT to
+const USER_WALLET_ADDRESS = "0x0000000000000000000000000000000000000000"
 
 const App = () => {
-
-  // Connect to the user's wallet
-  const {provider} = useProvider(MetamaskProvider)
-
-  useEffect(() => {
-    const connectProvider = async () => {
-      await provider?.connect()
-    }
-    connectProvider()
-  }, []);
-
 
   // Set the price as 0.1 ETH and convert to wei
   const priceOfNft = Price.fromRaw('0.01', 18, 'ETH')
 
-  const targetNft = useMemo(() => {
-   return {
-     // Source chain id (Sepolia in this case)
-     chainId: 11155111,
-     // Recipient wallet address
-     recipient: provider?.address ?? '',
-     price: priceOfNft,
-     // The token to swap the payment token to
-     swapTargetTokenSymbol: 'WETH',
-   }
-  }, [provider?.address])
-
-
-  const buildBundle = () => {
-    // Encode the transaction
-    const encodedFunctionData = new ethers.utils.Interface(["function buy(address receiver_) payable"])
-      .encodeFunctionData("buy", [
-        provider?.address!,
-      ])
-
-    console.log(priceOfNft)
-
-    return ethers.utils.defaultAbiCoder.encode(
-      // The Solidity types of the values in the second parameter
-      ["address[]", "uint256[]", "bytes[]"],
-      [
-        [NFT_CONTRACT_ADDRESS],
-        [priceOfNft.value],
-        [encodedFunctionData],
-      ]
-    )
+  const params:CheckoutOperationParams = {
+    // Source chain
+    chainIdFrom: 0,
+    // Destination chain id (Sepolia in this case)
+    chainIdTo: 11155111,
+    recipient: USER_WALLET_ADDRESS,
+    price: priceOfNft,
   }
 
-  // Create the transaction bundle
-  const checkoutTxBundle = useMemo(() => provider?.address ? buildBundle() : '', [provider?.address])
+  const createCheckoutTransactionBundle = useRef((recipient: string) => {
+    const encodedFunctionData = new ethers.utils.Interface([
+      'function buy(address receiver_) payable',
+    ]).encodeFunctionData('buy', [recipient])
+
+    return ethers.utils.defaultAbiCoder.encode(
+      ['address[]', 'uint256[]', 'bytes[]'],
+      [[NFT_CONTRACT_ADDRESS], [priceOfNft], [encodedFunctionData]],
+    )
+  }).current
 
   return (
     <div className="app">
-      {provider?.address && (<DappContextProvider
-        targetNft={targetNft}
-        checkoutTxBundle={checkoutTxBundle}
+      <DappContextProvider
+        params={params}
+        createCheckoutTransactionBundleCb={createCheckoutTransactionBundle}
       >
-        <RarimoPayButton/>
-      </DappContextProvider>)}
+        <RarimoPayButton />
+      </DappContextProvider>
     </div>
   )
 }
