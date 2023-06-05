@@ -18,7 +18,7 @@ const USER_WALLET_ADDRESS = "0x0000000000000000000000000000000000000000"
 
 // Chains to use
 const selectedChainName = ChainNames.Goerli
-const targetChainName = ChainNames.Sepolia
+const destinationChainName = ChainNames.Sepolia
 
 // Token to accept payment in
 const paymentToken = "UNI"
@@ -42,7 +42,7 @@ const sendTransaction = async () => {
 
   // Select the chain to pay on.
   // In this case, the NFT contract is on the Sepolia chain.
-  const destinationChain = chains.find((i: BridgeChain) => i.name === targetChainName)!
+  const destinationChain = chains.find((i: BridgeChain) => i.name === destinationChainName)!
 
   // Set the price as 0.1 ETH and convert to wei
   const priceOfNft = Price.fromRaw('0.01', 18, 'ETH')
