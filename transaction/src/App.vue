@@ -47,12 +47,12 @@ const sendTransaction = async () => {
   // Set the price as 0.1 ETH and convert to wei
   const priceOfNft = Price.fromRaw('0.01', 18, 'ETH')
 
-// Set the parameters for the transaction, including source and destination chain.
-const params:CheckoutOperationParams = {
-  chainIdFrom: selectedChain.id,
-  chainIdTo: destinationChain.id,
-  price: priceOfNft,
-}
+  // Set the parameters for the transaction, including source and destination chain.
+  const params:CheckoutOperationParams = {
+    chainIdFrom: selectedChain.id,
+    chainIdTo: destinationChain.id,
+    price: priceOfNft,
+  }
 
   // Initialize the transaction object
   await op.init(params)
