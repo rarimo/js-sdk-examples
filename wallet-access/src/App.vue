@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { createProvider, ChainTypes, ProviderEventPayload } from '@rarimo/provider'
+import { createProvider, ProviderEventPayload } from '@rarimo/provider'
 import { MetamaskProvider } from '@rarimo/providers-evm'
 import { IProvider } from '@rarimo/provider'
+import { ChainTypes } from '@rarimo/shared'
 import { ref } from 'vue'
 
 const PROVIDER_EVENTS: Array<keyof IProvider> = [

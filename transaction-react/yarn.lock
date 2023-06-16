@@ -1213,22 +1213,31 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.2.0.tgz#2cbcf822bf3764c9658c4d2e568bd0c0cb748016"
   integrity sha512-+OJ9konv95ClSTOJCmMZqpd5+YGsB2S+x6w3E1oaM8UuR5j8nTNHYSz8c9BEPGDOCMQYIEEGlVPj/VY64iTbGw==
 
-"@distributedlab/fetcher@0.2.0-rc.10", "@distributedlab/fetcher@^0.2.0-rc.5":
-  version "0.2.0-rc.10"
-  resolved "https://registry.yarnpkg.com/@distributedlab/fetcher/-/fetcher-0.2.0-rc.10.tgz#fed5956958e8d0c0f3a145bba08e8aea1cc12145"
-  integrity sha512-/y3I9sQj4Jr+7RHHnvmpcQgKZqMb8wFH2gXnCb8X4neleo9njCtkmf2zNpxJ+ek+jvJC0RFLhQ0W6zQR8UPpGg==
+"@distributedlab/fetcher@0.2.0-rc.16", "@distributedlab/fetcher@^0.2.0-rc.16":
+  version "0.2.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@distributedlab/fetcher/-/fetcher-0.2.0-rc.16.tgz#42b6bc4c8df84ccff9d9ab77976644e816f9b81f"
+  integrity sha512-qU+RUmkHWZ5GkuFaso2GFccK+g8fo1HBo0VBeYX93GYCIlWSE1KGCo2qZC+tqcdG5N4+jJyYl18U4Q0vzQEUiA==
   dependencies:
     uuid "^9.0.0"
 
-"@distributedlab/jac@^0.2.0-rc.5":
-  version "0.2.0-rc.10"
-  resolved "https://registry.yarnpkg.com/@distributedlab/jac/-/jac-0.2.0-rc.10.tgz#bb8b8b6631127c7035f0c767c235cb402d856e10"
-  integrity sha512-GbceyOTj9jqubwE1R1jTfIICuiJoe1FDEH4QzUlD/8c7aB96HWGnv1Ur96fVjaA8EX8WykbyuZ8eKH6hj9/yCQ==
+"@distributedlab/jac@^0.2.0-rc.16", "@distributedlab/jac@^0.2.0-rc.9":
+  version "0.2.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@distributedlab/jac/-/jac-0.2.0-rc.16.tgz#e03d64eb03274b2016670b5784c33b6701628712"
+  integrity sha512-KpQ0RiiRGVkfVcJ2VsJvzwKYwhrbjgY043bV8qnplzKGzcwUcTM8u5g7GgMJsnenoZqlgf/pLaSshQyWtXTfRw==
   dependencies:
-    "@distributedlab/fetcher" "0.2.0-rc.10"
+    "@distributedlab/fetcher" "0.2.0-rc.16"
     lodash "^4.17.21"
 
-"@distributedlab/tools@^0.2.0-rc.5", "@distributedlab/tools@^0.2.0-rc.9":
+"@distributedlab/tools@^0.2.0-rc.16":
+  version "0.2.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@distributedlab/tools/-/tools-0.2.0-rc.16.tgz#75e51cfc0e35d7d7f6c4ef720303cd3e8569c4fb"
+  integrity sha512-xr9nwPyiqpkVlE5CkAce1aT0QMcEwXtcYE5e0mYv6oFLjJeGRsoUqT0QcYt/gKw0hbnFnBXhUJiab5igSxqJRw==
+  dependencies:
+    bignumber.js "^9.1.1"
+    dayjs "^1.11.7"
+    tslib "^2.5.0"
+
+"@distributedlab/tools@^0.2.0-rc.9":
   version "0.2.0-rc.10"
   resolved "https://registry.yarnpkg.com/@distributedlab/tools/-/tools-0.2.0-rc.10.tgz#d1c06204a68d5982fb84035f152496417895cee5"
   integrity sha512-hM/CH84ndyJlzuX+UuYj3VXw35kulNibahTLaW+QIwkugxCWfT07mY5nsO7shZSHkyGpzIa99ukGemSju00EAw==
@@ -2528,7 +2537,7 @@
     "@ethersproject/contracts" "^5.0.0"
     "@ethersproject/providers" "^5.0.0"
 
-"@pancakeswap/sdk@^3.1.4":
+"@pancakeswap/sdk@3.1.4":
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/@pancakeswap/sdk/-/sdk-3.1.4.tgz#5b6477367e51ed6030c38e33e34e6501ce00f1ca"
   integrity sha512-HTsBUkrkWj6J5MclJ3kTHdsMfQ6VikIqXII/FLv1SMy2wL+9PcDTQBB9IlIRe9Vd0ZQnEVD7ZGiK4OjWZ+mHKA==
@@ -2541,7 +2550,7 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@pancakeswap/smart-router@^0.6.1":
+"@pancakeswap/smart-router@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@pancakeswap/smart-router/-/smart-router-0.6.1.tgz#9599f19b0f08263e53ac6fa4089242dcb1c5380b"
   integrity sha512-TXg0HyUw2GrvXRth7o3rTM6I1LW/jd4IshUGLNb5fjjH6mMeAknxf/WAL+XFGfa3lWuO9JSGex8ObXDndwD+Pw==
@@ -2552,7 +2561,7 @@
     lodash "^4.17.21"
     tiny-invariant "^1.1.0"
 
-"@pancakeswap/swap-sdk-core@*", "@pancakeswap/swap-sdk-core@^0.0.1":
+"@pancakeswap/swap-sdk-core@*", "@pancakeswap/swap-sdk-core@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@pancakeswap/swap-sdk-core/-/swap-sdk-core-0.0.1.tgz#092a4935a2434374f0c1bbab1f0396bf633f5c26"
   integrity sha512-nBs+5LDtOqIsIDaJ9yoYp9phtIt6jhjAlBbPB0IN2cA+o6IpTtn+psnkHR86VtXYizSw2R9iMyGDFyZf1Z6dJg==
@@ -2637,22 +2646,36 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
-"@rarimo/nft-checkout@^1.5.0-rc.11":
-  version "1.5.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@rarimo/nft-checkout/-/nft-checkout-1.5.0-rc.11.tgz#0cdabd0bb04eb03b105214a35038acdebc338ae1"
-  integrity sha512-AF0hva2UQNgb7rVTnxetFe2NR1MN8SyAAQE0k8JEzISCpxnqumSD9gU1+5LHK/16QcU7MQ9Lf952s8Xisa+J5A==
+"@rarimo/bridge@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@rarimo/bridge/-/bridge-2.0.0-rc.0.tgz#a4c57ebec1da6891c731b222f798debb31e066cf"
+  integrity sha512-KFpaZWv7k0n62BbvfXkYmMKZqBmYOl5u037SAbadM3AchimOERX53i7208I+9Pom40qi6ttqukk7WrwmbZdWKA==
   dependencies:
-    "@distributedlab/fetcher" "^0.2.0-rc.5"
-    "@distributedlab/jac" "^0.2.0-rc.5"
-    "@distributedlab/tools" "^0.2.0-rc.5"
+    "@distributedlab/jac" "^0.2.0-rc.9"
+    "@distributedlab/tools" "^0.2.0-rc.9"
+    "@rarimo/provider" "^2.0.0-rc.0"
+    "@rarimo/shared" "^2.0.0-rc.0"
+    ethers "^5.7.2"
+
+"@rarimo/nft-checkout@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@rarimo/nft-checkout/-/nft-checkout-2.0.0-rc.0.tgz#f6a5f09740f7bb703a0937d5ce314e1c450da158"
+  integrity sha512-/25Nb1FYCpOsVNppDC9Njx6UD9fyP06uSBmpRwH5mqf+TW9HuGaBwoUiFnDxF4DdnE3kWbkmMmNkHZ9PqnrPZw==
+  dependencies:
+    "@distributedlab/fetcher" "^0.2.0-rc.16"
+    "@distributedlab/jac" "^0.2.0-rc.16"
+    "@distributedlab/tools" "^0.2.0-rc.16"
     "@ethersproject/abstract-provider" "^5.7.0"
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/providers" "^5.7.2"
-    "@pancakeswap/sdk" "^3.1.4"
-    "@pancakeswap/smart-router" "^0.6.1"
-    "@pancakeswap/swap-sdk-core" "^0.0.1"
-    "@rarimo/provider" "^1.5.0-rc.11"
+    "@pancakeswap/sdk" "3.1.4"
+    "@pancakeswap/smart-router" "0.6.1"
+    "@pancakeswap/swap-sdk-core" "0.0.1"
+    "@rarimo/bridge" "^2.0.0-rc.0"
+    "@rarimo/provider" "^2.0.0-rc.0"
     "@rarimo/quickswap-sdk" "^3.0.8"
+    "@rarimo/shared" "^2.0.0-rc.0"
+    "@rarimo/swap" "^2.0.0-rc.0"
     "@traderjoe-xyz/sdk" "2.0.7"
     "@uniswap/router-sdk" "^1.4.0"
     "@uniswap/sdk-core" "3.1.0"
@@ -2665,21 +2688,23 @@
     events "^3.3.0"
     jsbi "^3.2.5"
 
-"@rarimo/provider@^1.5.0-rc.11":
-  version "1.5.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@rarimo/provider/-/provider-1.5.0-rc.11.tgz#f012c55a2a9601e760c2889d4b33a4e4c0ee1c06"
-  integrity sha512-4KCRJBQjsgqy2tew4V1WN5DHdvIV7GAgXmaSEdC+oLG3Ow+5qSDHzLOa0HFj++T31NLYSTvfIlPsvw8gm8wZVQ==
+"@rarimo/provider@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@rarimo/provider/-/provider-2.0.0-rc.0.tgz#aeac4468c976992855d37722291f54bf3a4db016"
+  integrity sha512-paS/vGtHlf+neVOT522xWqlAEKy35n1FdudeeewK/ROl7qBSagRlpVBuDqRTNotlPR028ZfvN+KCNtZZJ2CK5A==
   dependencies:
-    "@distributedlab/tools" "^0.2.0-rc.9"
+    "@distributedlab/tools" "^0.2.0-rc.16"
+    "@rarimo/shared" "^2.0.0-rc.0"
 
-"@rarimo/providers-evm@^1.5.0-rc.11":
-  version "1.5.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@rarimo/providers-evm/-/providers-evm-1.5.0-rc.11.tgz#ace4101bc6eeda198e96d8ea6e5558284faffd5d"
-  integrity sha512-O1L8r0bdW4OiEFAzJeBkrsMN152GSk4dazd6xJuh8RkuUAWNrPY1kqvfeHCOr6ap08z8jq/1ThZxp6SkZx1xxA==
+"@rarimo/providers-evm@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@rarimo/providers-evm/-/providers-evm-2.0.0-rc.0.tgz#01f21d17fdbfc6d663323a95688ec23aff2d0400"
+  integrity sha512-pQbsv6WYJGX2dck/+U5sZc2Bs/mzGocVxe0EVb2ljt0ADnyjWLmprrKoLLwfSyKJh0w0kXGg73SnyOV+twU+QQ==
   dependencies:
     "@ethersproject/abstract-provider" "^5.7.0"
     "@ethersproject/properties" "^5.7.0"
-    "@rarimo/provider" "^1.5.0-rc.11"
+    "@rarimo/provider" "^2.0.0-rc.0"
+    "@rarimo/shared" "^2.0.0-rc.0"
     ethers "^5.7.2"
     web3-core "^1.8.2"
 
@@ -2696,13 +2721,15 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@rarimo/react-nft-checkout@^1.5.0-rc.11":
-  version "1.5.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@rarimo/react-nft-checkout/-/react-nft-checkout-1.5.0-rc.11.tgz#14e107c8fee7feaec98e8ee5f9202e199034170d"
-  integrity sha512-acp9OWp8eO2UcUPw/KoEYWLf8j/FvW2gcpKaVoE2i75pb2ul1MEYM+kI2l3zTGaRIxfGdw+Nxr7p9bdlpV8Aog==
+"@rarimo/react-nft-checkout@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@rarimo/react-nft-checkout/-/react-nft-checkout-2.0.0-rc.0.tgz#4416c0eb249b751993ee8217ebee3ffe0eb1ef21"
+  integrity sha512-6pFWXV6/3plWFQ1+iQhuXVdUbAx1/Gq0Prid8uecxoYrZmE5brHsW9dq0GIs7N0vjLTXU+p1+ozyAvFeYkE6Tw==
   dependencies:
-    "@rarimo/nft-checkout" "^1.5.0-rc.11"
-    "@rarimo/providers-evm" "^1.5.0-rc.11"
+    "@rarimo/bridge" "^2.0.0-rc.0"
+    "@rarimo/nft-checkout" "^2.0.0-rc.0"
+    "@rarimo/providers-evm" "^2.0.0-rc.0"
+    "@rarimo/shared" "^2.0.0-rc.0"
     jsbi "^3.2.5"
   optionalDependencies:
     "@emotion/react" "^11.10.6"
@@ -2710,12 +2737,21 @@
     "@mui/material" "^5.11.10"
     iconoir-react "^6.2.1"
 
-"@rarimo/react-provider@^1.5.0-rc.11":
-  version "1.5.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@rarimo/react-provider/-/react-provider-1.5.0-rc.11.tgz#a83a247616e1055045a4affeffc49447702548c0"
-  integrity sha512-6NtrVzA+UfiCQWz7TOepuU1KI/buwhQ9TZ0BHDP8wlW8E67dwMGlZD6R/jvedwA95tvUnfAfSxY8h/9B/n2V5A==
+"@rarimo/shared@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@rarimo/shared/-/shared-2.0.0-rc.0.tgz#c5f5a999665d838bf27fbddef0965b6b9aa21584"
+  integrity sha512-b0imjlQYT+7iqS5ywSvJKgIh1FE9tfWwHj36y7rpBI4c2iECYOo8CwkbNppbANNZBVMtco92nKDa5dE4dSQKlA==
   dependencies:
-    "@rarimo/provider" "^1.5.0-rc.11"
+    "@distributedlab/tools" "^0.2.0-rc.16"
+
+"@rarimo/swap@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@rarimo/swap/-/swap-2.0.0-rc.0.tgz#167b522f2f697f74afef3874693bd71a463bf089"
+  integrity sha512-nmHkLQilzjBw4V8GzteNDr+PmlvO2Ve7SYx7p7PIMFF5FGGJ3x5hSFHaTFojbNbdo5CpREiCRF4+RVdz5NYd5Q==
+  dependencies:
+    "@rarimo/bridge" "^2.0.0-rc.0"
+    "@rarimo/provider" "^2.0.0-rc.0"
+    "@rarimo/shared" "^2.0.0-rc.0"
 
 "@resolver-engine/core@^0.2.1":
   version "0.2.1"
