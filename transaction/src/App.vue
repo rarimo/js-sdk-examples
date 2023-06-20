@@ -34,7 +34,7 @@ const sendTransaction = async () => {
   const op = createCheckoutOperation(EVMOperation, provider)
 
   // Get the chains that are supported from that chain type.
-  const chains = await op.supportedChains()
+  const chains = await op.loadSupportedChains()
 
   // Select the chain to pay from.
   // This example uses the Goerli chain, but your application can ask the user which chain to use.
