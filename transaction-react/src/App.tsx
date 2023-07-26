@@ -1,25 +1,34 @@
-import { ethers} from "ethers"
-import { useRef } from 'react'
+import { ethers} from 'ethers'
+import { useRef, useEffect } from 'react'
 
 import { CheckoutOperationParams, Price } from '@rarimo/nft-checkout'
 import { RarimoPayButton, DappContextProvider } from '@rarimo/react-nft-checkout'
+import { MetamaskProvider } from '@rarimo/providers-evm'
+import { useProvider } from '@rarimo/react-provider'
 
 // Address of the NFT sale contract
-const NFT_CONTRACT_ADDRESS = "0x77fedfb705c8bac2e03aad2ad8a8fe83e3e20fa1"
-// Buyer's address to send the bought NFT to
-const USER_WALLET_ADDRESS = "0x0000000000000000000000000000000000000000"
+const NFT_CONTRACT_ADDRESS = "0xd5aA2aD7900da549cb029A5cff5E9396630B2EBC"
 
 const App = () => {
+
+  // Get the user's wallet information
+  const { provider } = useProvider(MetamaskProvider)
+  useEffect(() => {
+    const connectToProvider = async () => {
+      await provider.connect()
+    }
+    if (!provider) connectToProvider()
+  }, [provider])
 
   // Set the price as 0.1 ETH and convert to wei
   const priceOfNft = Price.fromRaw('0.01', 18, 'ETH')
 
   const params:CheckoutOperationParams = {
-    // Source chain
-    chainIdFrom: 0,
-    // Destination chain id (Sepolia in this case)
-    chainIdTo: 11155111,
-    recipient: USER_WALLET_ADDRESS,
+    // Source chain: Goerli
+    chainIdFrom: 5,
+    // Destination chain: Fuji
+    chainIdTo: 43113,
+    recipient: provider?.address,
     price: priceOfNft,
   }
 

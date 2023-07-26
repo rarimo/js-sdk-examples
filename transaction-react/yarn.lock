@@ -2253,6 +2253,14 @@
     "@mui/material" "^5.11.10"
     iconoir-react "^6.2.1"
 
+"@rarimo/react-provider@^2.0.0-rc.9":
+  version "2.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@rarimo/react-provider/-/react-provider-2.0.0-rc.9.tgz#1ffb05d8b9653a12b5718f6a3a7edf34071165b0"
+  integrity sha512-2Yu6wgXp+LCsi/iASgNXQXnZOHRCV1LNNm1hpigtyWbbV9opuP4Fvpf07dIChMDuYN4MGfyEMmbFddImyv3fQw==
+  dependencies:
+    "@rarimo/provider" "^2.0.0-rc.9"
+    "@rarimo/shared" "^2.0.0-rc.9"
+
 "@rarimo/shared@^2.0.0-rc.9":
   version "2.0.0-rc.9"
   resolved "https://registry.yarnpkg.com/@rarimo/shared/-/shared-2.0.0-rc.9.tgz#f9f317ad273659f6600bb7043050cd6f77fb0913"
