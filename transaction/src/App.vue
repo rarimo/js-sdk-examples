@@ -26,14 +26,11 @@ const MARKETPLACES: { [key in ChainNames]?: string } = {
 const sourceChainName = ChainNames.Goerli
 const destinationChainName = ChainNames.Fuji
 
-// Token to accept payment in.
+// Token to accept payment in
 const paymentToken = "ETH"
 
 // Token to receive payment in
 const receiveToken = ref('Pending')
-
-// Transaction price
-const priceDisplayString = ref('Pending')
 
 const sourceTxUrl = ref('')
 const destinationTxUrl = ref('')
@@ -81,11 +78,8 @@ const sendTransaction = async () => {
   // This example hard-codes UNI, but your application can ask the user which token to pay with.
   const selectedToken = paymentTokens.find(i => i.symbol === paymentToken)!
 
-  // Get the estimated purchase price in the payment token, including the cost to swap the tokens to the tokens that the seller accepts payment in.
-  // At this point you can ask the user to confirm the transaction with the fees or cancel it.
+  // Get the estimated cost of the token swap, not the total cost to the user
   const estimatedPrices = await op.estimatePrice([selectedToken])
-  // TODO: How to get the price I'll pay?
-  // priceDisplayString.value = ''//??
 
   // Create the transaction bundle, which includes custom logic that tells the Rarimo contract what to do after unlocking the transferred tokens on the destination chain, such as calling another contract to buy the NFT on the destination chain.
   // Optionally, you can set the bundle salt to be able to access the temporary contracts that Rarimo uses to run the bundled transactions.
@@ -137,7 +131,6 @@ sendTransaction()
     <ul>
       <li>Source chain: {{ sourceChainName }}</li>
       <li>Source token: {{ paymentToken }}</li>
-      <li>Estimated price with gas fee: {{ priceDisplayString }}</li>
       <li>Destination chain: {{ destinationChainName }}</li>
       <li>Destination token: {{ receiveToken }}</li>
     </ul>
