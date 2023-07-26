@@ -1301,10 +1301,25 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.2.0.tgz#2cbcf822bf3764c9658c4d2e568bd0c0cb748016"
   integrity sha512-+OJ9konv95ClSTOJCmMZqpd5+YGsB2S+x6w3E1oaM8UuR5j8nTNHYSz8c9BEPGDOCMQYIEEGlVPj/VY64iTbGw==
 
-"@distributedlab/tools@^0.2.0-rc.16":
-  version "0.2.0-rc.16"
-  resolved "https://registry.yarnpkg.com/@distributedlab/tools/-/tools-0.2.0-rc.16.tgz#75e51cfc0e35d7d7f6c4ef720303cd3e8569c4fb"
-  integrity sha512-xr9nwPyiqpkVlE5CkAce1aT0QMcEwXtcYE5e0mYv6oFLjJeGRsoUqT0QcYt/gKw0hbnFnBXhUJiab5igSxqJRw==
+"@distributedlab/fetcher@1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@distributedlab/fetcher/-/fetcher-1.0.0-rc.2.tgz#24448b1a156b63984c4bfafec97255ee238de2a0"
+  integrity sha512-6Rz2nz7szF0IGN1e3IgDI+hfvGsOSHahY3H7qL5vyEMrgKQNQUdif4CN+4hImFfRF3XlM5xSg4gnD7sEL8Fjqw==
+  dependencies:
+    uuid "^9.0.0"
+
+"@distributedlab/jac@^1.0.0-rc.1":
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@distributedlab/jac/-/jac-1.0.0-rc.2.tgz#9eb1842a88b9ac94984b30f44a8e94046c86a18d"
+  integrity sha512-qa9bB2ma7GnQZsJlvP3MsNJg21eCjlZRQtt5BXEU/m3Fxnh/AHPb+BW/Dnn5UGDJiwOPHHn2m/LBFrbNUJTk3g==
+  dependencies:
+    "@distributedlab/fetcher" "1.0.0-rc.2"
+    lodash "^4.17.21"
+
+"@distributedlab/tools@^1.0.0-rc.1":
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@distributedlab/tools/-/tools-1.0.0-rc.2.tgz#eba8fa822876ce0a6b8ed98570a80d0818f7fde7"
+  integrity sha512-9gSOUI3SndrPl5sBr9zAxCgJ2J+kAsYuGpzx+nr8CBV2ec5hFAXM3FgQma4UwrA5IHH3kbSHuPa5Cy8u3sU7mQ==
   dependencies:
     bignumber.js "^9.1.1"
     dayjs "^1.11.7"
@@ -2061,40 +2076,41 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@rarimo/provider@^2.0.0-rc.0":
-  version "2.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@rarimo/provider/-/provider-2.0.0-rc.0.tgz#aeac4468c976992855d37722291f54bf3a4db016"
-  integrity sha512-paS/vGtHlf+neVOT522xWqlAEKy35n1FdudeeewK/ROl7qBSagRlpVBuDqRTNotlPR028ZfvN+KCNtZZJ2CK5A==
+"@rarimo/provider@^2.0.0-rc.9":
+  version "2.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@rarimo/provider/-/provider-2.0.0-rc.9.tgz#c002e702f1f722c152541411a054f0319c85a793"
+  integrity sha512-nIxuBbotWsWRb3MwD5zAHQIbELB3qnPIfl36b8YqeZVkElaXUH8eqB+eSe+jzErHYTVlqBbdyn06nsYxLaQmCw==
   dependencies:
-    "@distributedlab/tools" "^0.2.0-rc.16"
-    "@rarimo/shared" "^2.0.0-rc.0"
+    "@distributedlab/tools" "^1.0.0-rc.1"
+    "@rarimo/shared" "^2.0.0-rc.9"
 
-"@rarimo/providers-evm@^2.0.0-rc.0":
-  version "2.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@rarimo/providers-evm/-/providers-evm-2.0.0-rc.0.tgz#01f21d17fdbfc6d663323a95688ec23aff2d0400"
-  integrity sha512-pQbsv6WYJGX2dck/+U5sZc2Bs/mzGocVxe0EVb2ljt0ADnyjWLmprrKoLLwfSyKJh0w0kXGg73SnyOV+twU+QQ==
+"@rarimo/providers-evm@^2.0.0-rc.9":
+  version "2.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@rarimo/providers-evm/-/providers-evm-2.0.0-rc.9.tgz#fafbda530fc76c8ab4967fbaf7f43fa0caae165b"
+  integrity sha512-Osp3TYn51k+91Agu5ECj027Iq3sj98bkRxU/cWVsmZzLpHkLbUO0hPcGmsfkJbY1nJEVDQIKg3XqemSIlwKm8w==
   dependencies:
     "@ethersproject/abstract-provider" "^5.7.0"
     "@ethersproject/properties" "^5.7.0"
-    "@rarimo/provider" "^2.0.0-rc.0"
-    "@rarimo/shared" "^2.0.0-rc.0"
+    "@rarimo/provider" "^2.0.0-rc.9"
+    "@rarimo/shared" "^2.0.0-rc.9"
     ethers "^5.7.2"
     web3-core "^1.8.2"
 
-"@rarimo/react-provider@^2.0.0-rc.0":
-  version "2.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@rarimo/react-provider/-/react-provider-2.0.0-rc.0.tgz#dd6979148a2fffdf84082e77e492ded0a5e5b8e7"
-  integrity sha512-Cl33wG51h2KttcjKvPM+5IcZTkSpa3g0dn1z9Nl2o5PHH9FZVsQqThL5kYnk8G/ESRJXcN3j6vYwJCgHSuJMkA==
+"@rarimo/react-provider@^2.0.0-rc.9":
+  version "2.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@rarimo/react-provider/-/react-provider-2.0.0-rc.9.tgz#1ffb05d8b9653a12b5718f6a3a7edf34071165b0"
+  integrity sha512-2Yu6wgXp+LCsi/iASgNXQXnZOHRCV1LNNm1hpigtyWbbV9opuP4Fvpf07dIChMDuYN4MGfyEMmbFddImyv3fQw==
   dependencies:
-    "@rarimo/provider" "^2.0.0-rc.0"
-    "@rarimo/shared" "^2.0.0-rc.0"
+    "@rarimo/provider" "^2.0.0-rc.9"
+    "@rarimo/shared" "^2.0.0-rc.9"
 
-"@rarimo/shared@^2.0.0-rc.0":
-  version "2.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@rarimo/shared/-/shared-2.0.0-rc.0.tgz#c5f5a999665d838bf27fbddef0965b6b9aa21584"
-  integrity sha512-b0imjlQYT+7iqS5ywSvJKgIh1FE9tfWwHj36y7rpBI4c2iECYOo8CwkbNppbANNZBVMtco92nKDa5dE4dSQKlA==
+"@rarimo/shared@^2.0.0-rc.9":
+  version "2.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@rarimo/shared/-/shared-2.0.0-rc.9.tgz#f9f317ad273659f6600bb7043050cd6f77fb0913"
+  integrity sha512-X8NNsX/yDSmuJ+LO5DmauVahCNGOfpneGSbggvtarJsu/h4jV6vEu9eUQGrEUFQ963B/gk1c2Fsq7kmda5XjLg==
   dependencies:
-    "@distributedlab/tools" "^0.2.0-rc.16"
+    "@distributedlab/jac" "^1.0.0-rc.1"
+    "@distributedlab/tools" "^1.0.0-rc.1"
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
@@ -9955,6 +9971,11 @@ uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"

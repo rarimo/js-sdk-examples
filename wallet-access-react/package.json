@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@rarimo/providers-evm": "^2.0.0-rc.0",
-    "@rarimo/react-provider": "^2.0.0-rc.0",
+    "@rarimo/providers-evm": "^2.0.0-rc.9",
+    "@rarimo/react-provider": "^2.0.0-rc.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
