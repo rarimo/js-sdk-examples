@@ -63,7 +63,7 @@ const sendTransaction = async () => {
     chainIdTo: destinationChain.id,
     price: priceOfNft,
     recipient: provider.address,
-    isMultiplePayment: false // Single payment token for a simple example
+    isMultiplePayment: false, // Single payment token for a simple example
   }
 
   // Initialize the transaction object
