@@ -17,18 +17,18 @@
 </template>
 
 <script setup lang="ts">
-import { ChainNames } from '@rarimo/shared'
-import { CheckoutOperationParams, createCheckoutOperation, EVMOperation, Price, BridgeChain } from '@rarimo/nft-checkout'
+import { ChainNames, BridgeChain } from '@rarimo/shared'
+import { CheckoutOperationParams, createCheckoutOperation, EVMOperation, Price } from '@rarimo/nft-checkout'
 import { createProvider, ProviderUserRejectedRequest } from '@rarimo/provider'
 import { MetamaskProvider } from '@rarimo/providers-evm'
 import { ethers } from "ethers"
 
 // Source and destination chains and tokens
 const sourceChainName = ChainNames.Goerli
-const destinationChainName = ChainNames.Sepolia
+const destinationChainName = ChainNames.Fuji
 
-const sourceTokenSymbol = "UNI"
-const destinationTokenSymbol = "ETH"
+const sourceTokenSymbol = "ETH"
+const destinationTokenSymbol = "AVAX"
 
 const sendSwapTransaction = async () => {
   // Connect to the Metamask wallet in the browser, using the MetamaskProvider interface to limit bundle size.
@@ -38,7 +38,7 @@ const sendSwapTransaction = async () => {
   const op = createCheckoutOperation(EVMOperation, provider)
 
   // Get the chains that are supported from that chain type.
-  const chains = await op.loadSupportedChains()
+  const chains = await op.getSupportedChains()
 
   // Select the source and destination chains.
   // This example uses the Goerli chain, but your application can ask the user which chain to use.
@@ -53,7 +53,8 @@ const sendSwapTransaction = async () => {
     // Address to send the swapped tokens to
     recipient: provider.address!.toString(),
     // Amount of tokens to receive
-    price: Price.fromRaw('0.00001', 18, destinationTokenSymbol),
+    price: Price.fromRaw('1', 18, destinationTokenSymbol),
+    isMultiplePayment: false,
   }
 
   console.log('Swapping',
@@ -76,7 +77,7 @@ const sendSwapTransaction = async () => {
   )
 
   // Get the available tokens
-  const tokens = await op.loadPaymentTokens(sourceChain!)
+  const tokens = await op.getPaymentTokens()
   if (tokens.length === 0) {
     console.log('No tokens in the wallet have a large enough balance to make the swap.')
   }
@@ -87,12 +88,12 @@ const sendSwapTransaction = async () => {
     console.log('You do not have enough', sourceTokenSymbol, 'to make the swap.')
   }
 
-  const estimatedPrice = await op.estimatePrice(paymentToken!)
+  const estimatedPrices = await op.estimatePrice([paymentToken!])
 
   // Run the transaction.
   // The `checkout()` method takes the parameters from the operation instance, gets approval from the user's wallet, and calls the Rarimo contract to handle the transaction.
-  // Change the next line to await op.checkout(estimatedPrice, { bundle }) if the source and destination chains are the same:
-  await op.checkout(estimatedPrice)
+  // Change the next line to await op.checkout(estimatedPrices, { bundle }) if the source and destination chains are the same:
+  await op.checkout(estimatedPrices)
     .then((txHash) => {
       console.log('Swap complete:', txHash)
     })
