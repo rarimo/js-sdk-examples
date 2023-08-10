@@ -6,7 +6,8 @@
     </div>
     <div style="margin-top:20px">
       Destination network: {{ destinationChainName }}<br/>
-      Destination token: {{ destinationTokenSymbol }}
+      Destination token: {{ destinationTokenSymbol }}<br/>
+      Destination token amount: {{ destinationTokenAmount }}
     </div>
 
     <button style="margin:46px 0" @click="sendSwapTransaction">Swap</button>
@@ -29,6 +30,9 @@ const destinationChainName = ChainNames.Fuji
 
 const sourceTokenSymbol = "ETH"
 const destinationTokenSymbol = "AVAX"
+
+// Token amounts
+const destinationTokenAmount = '1'
 
 const sendSwapTransaction = async () => {
   // Connect to the Metamask wallet in the browser, using the MetamaskProvider interface to limit bundle size.
@@ -53,7 +57,7 @@ const sendSwapTransaction = async () => {
     // Address to send the swapped tokens to
     recipient: provider.address!.toString(),
     // Amount of tokens to receive
-    price: Price.fromRaw('1', 18, destinationTokenSymbol),
+    price: Price.fromRaw(destinationTokenAmount, 18, destinationTokenSymbol),
     isMultiplePayment: false,
   }
 
