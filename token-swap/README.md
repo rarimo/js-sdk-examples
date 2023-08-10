@@ -34,7 +34,7 @@ For example, to make the application use Coinbase wallets, change `MetamaskProvi
 
    ```vue
    <script setup lang="ts">
-   import { CoinbaseProvider, createProvider } from '@rarimo/provider'
+   import { CoinbaseProvider } from '@rarimo/providers-evm'
 
    // ...
 
@@ -52,24 +52,22 @@ For example, to make the application use Coinbase wallets, change `MetamaskProvi
    - [`PhantomProvider`](https://rarimo.github.io/js-sdk/classes/_rarimo_provider.PhantomProvider.html): Phantom wallets
    - [`SolflareProvider`](https://rarimo.github.io/js-sdk/classes/_rarimo_provider.SolflareProvider.html): Solflare wallets
 
-1. Set the source and destination tokens and chains on these lines:
-
-   ```vue
-   const sourceChainName = ChainNames.Goerli
-   const destinationChainName = ChainNames.Sepolia
-
-   const sourceTokenSymbol = "UNI"
-   const destinationTokenSymbol = "ETH"
-   ```
-
-   For information about the chains and tokens that Rarimo supports, see [Swapping tokens](https://docs.rarimo.com/overview/swapping-tokens) in the Rarimo documentation.
-
-1. In the `price` variable, set the amount of tokens to receive after the swap.
+1. Set the source and destination tokens, chains, and amounts on the following lines.
 Make sure that you have enough to make the swap, because token values can vary widely.
 
    ```vue
-   price: Price.fromRaw('0.00001', 18, destinationTokenSymbol),
+   // Source and destination chains and tokens
+   const sourceChainName = ChainNames.Goerli
+   const destinationChainName = ChainNames.Fuji
+
+   const sourceTokenSymbol = "ETH"
+   const destinationTokenSymbol = "AVAX"
+
+   // Token amounts
+   const destinationTokenAmount = '1'
    ```
+
+   For information about the chains and tokens that Rarimo supports, see [Swapping tokens](https://docs.rarimo.com/overview/swapping-tokens) in the Rarimo documentation.
 
 1. In the terminal, run `yarn dev` and wait for the application to start and then open the URL `http://localhost:5173` in your web browser.
 
