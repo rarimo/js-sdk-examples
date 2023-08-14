@@ -24,7 +24,7 @@ const MARKETPLACES: { [key in ChainNames]?: string } = {
 
 // Chains to use
 const sourceChainName = ChainNames.Goerli
-const destinationChainName = ChainNames.Fuji
+const destinationChainName = ChainNames.Chapel
 
 // Token to accept payment in
 const paymentToken = "ETH"
@@ -50,7 +50,7 @@ const sendTransaction = async () => {
   const sourceChain = chains.find((i: BridgeChain) => i.name === sourceChainName)!
 
   // Select the chain to pay on.
-  // In this case, the NFT contract is on the Fuji chain.
+  // In this case, the NFT contract is on the BSC Chapel chain.
   const destinationChain = chains.find((i: BridgeChain) => i.name === destinationChainName)!
   receiveToken.value = destinationChain.token.symbol
 
