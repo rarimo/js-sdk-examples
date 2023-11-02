@@ -24,7 +24,7 @@ const MARKETPLACES: { [key in ChainNames]?: string } = {
 
 // Chains to use
 const sourceChainName = ChainNames.Goerli
-const destinationChainName = ChainNames.Fuji
+const destinationChainName = ChainNames.Chapel
 
 // Token to accept payment in
 const paymentToken = "ETH"

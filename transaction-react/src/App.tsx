@@ -7,7 +7,7 @@ import { MetamaskProvider } from '@rarimo/providers-evm'
 import { useProvider } from '@rarimo/react-provider'
 
 // Address of the NFT sale contract
-const NFT_CONTRACT_ADDRESS = "0xd5aA2aD7900da549cb029A5cff5E9396630B2EBC"
+const NFT_CONTRACT_ADDRESS = "0x22d6A6946874F8Df79Bc9574e4cB72729c2d0c75"
 
 const App = () => {
 
@@ -21,13 +21,13 @@ const App = () => {
   }, [provider])
 
   // Set the price as 0.1 ETH and convert to wei
-  const priceOfNft = Price.fromRaw('0.01', 18, 'ETH')
+  const priceOfNft = Price.fromRaw('0.01', 18, 'tBNB')
 
   const params:CheckoutOperationParams = {
     // Source chain: Goerli
     chainIdFrom: 5,
-    // Destination chain: Fuji
-    chainIdTo: 43113,
+    // Destination chain: Chapel
+    chainIdTo: 97,
     recipient: provider?.address,
     price: priceOfNft,
   }

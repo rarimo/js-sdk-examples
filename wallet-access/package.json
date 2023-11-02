@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rarimo/provider": "^2.0.0-rc.9",
-    "@rarimo/providers-evm": "^2.0.0-rc.9",
-    "@rarimo/shared": "^2.0.0-rc.9",
+    "@rarimo/provider": "^2.0.0-rc.30",
+    "@rarimo/providers-evm": "^2.0.0-rc.30",
+    "@rarimo/shared": "^2.0.0-rc.30",
     "vue": "^3.2.47"
   },
   "devDependencies": {
